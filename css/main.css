@@ -1,0 +1,425 @@
+html, body, #map-base {
+    margin: 0;
+    padding: 0;
+	height: 100%;
+	width: 100vw;
+	font-size: calc(.6em + 1vmin);
+	font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+p {
+    margin: 0 0 10px;
+}
+#container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#map-base {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+#map-clip {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    overflow: hidden!important;
+    border-left: 1px solid #c00;
+    pointer-events: none;
+}
+#map-clip-inner {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+}
+#map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+}
+#control-slider {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: -20px;
+    background-color: #c00;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 44px;
+    font-size: 16px;
+    z-index: 10;
+    font-weight: 700;
+    color: #fff;
+    cursor: ew-resize;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-shadow: 0 0 20px rgba(0,0,0,1);
+    text-shadow: 0 0 3px rgba(0,0,0,.33);
+    -webkit-transition: top 500ms ease-out;
+    -moz-transition: top 500ms ease-out;
+    -o-transition: top 500ms ease-out;
+    transition: top 500ms ease-out;
+}
+
+#control-slider::before, #control-slider::after {
+    position: absolute;
+    padding: 1px 10px 0;
+    top: 8px;
+    z-index: -1;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 700;
+    height: 23px;
+    line-height: 22px;
+    background-color: #c00;
+    letter-spacing: .1em;
+    border-radius: 7px;
+}
+#control-slider::before {
+    content: "1947";
+    text-align: right;
+    padding-right: 40px;
+    right: 0;
+}
+#control-slider i {
+    margin: 0 -.23em;
+}
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-arrow-left:before {
+    content: "\e92c";
+}
+#control-slider::after {
+    content: "2023";
+    text-align: left;
+    padding-left: 40px;
+    left: 0;
+}
+#content-2015 {
+    z-index: 6;
+}
+#content-1942 {
+    z-index: 2;
+}
+.content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    min-width: 300px;
+    max-height: 100%;
+    background-color: rgba(0,0,0,.67);
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1;
+    pointer-events: auto;
+}
+@media screen and (orientation: portrait) {
+    .content {
+        top: auto;
+        bottom: 0;
+        width: 100%;
+    }
+}
+.content-wrapper {
+    position: relative;
+    margin: 12vh auto 0;
+    width: 90%;
+    color: #fff;
+    font-weight: 300;
+    text-align: justify
+}
+.small .content-wrapper {
+    box-sizing: border-box;
+    margin: 0;
+    width: 100%;
+    padding: 0 10px 0
+}
+.content-header {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between
+}
+.content-header h2 {
+    margin: 0;
+    line-height: 1.2em;
+    font-weight: 300;
+}
+.content-text, .content-navigation {
+    line-height: 1.4em;
+}
+.content-navigation {
+    justify-content: space-between;
+    display: flex;
+    padding-bottom: 10px
+}
+.btn {
+    background-color: #c00;
+    color: #fff;
+    cursor: pointer
+}
+.btn:active {
+    background-color: #b20000
+}
+.goto {
+    border-radius: 20px;
+    padding: 5px 15px 5px;
+    text-decoration: none;
+    -webkit-transition: background-color,box-shadow 200ms ease-out;
+    -moz-transition: background-color,box-shadow 200ms ease-out;
+    -o-transition: background-color,box-shadow 200ms ease-out;
+    transition: background-color,box-shadow 200ms ease-out;
+}
+.goto i {
+    font-size: .9em;
+}
+.icon-cross:before {
+    content: "\e924";
+}
+.goto-explore {
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    line-height: 1em;
+    background-color: #aaa;
+    color: #000;
+    border-radius: 100%;
+    text-decoration: none;
+    padding: .55em .5em .45em;
+    -webkit-transition: background-color 200ms ease-out;
+    -moz-transition: background-color 200ms ease-out;
+    -o-transition: background-color 200ms ease-out;
+    transition: background-color 200ms ease-out;
+    cursor: pointer
+}
+.content-image {
+    text-align: center;
+}
+.content-image img {
+    max-width: 100%;
+}
+#map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+}
+.show-intro #intro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    text-align: center;
+    padding: 46vh 0 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+.intro-button {
+    display: inline-block;
+    border-radius: 1em;
+    font-size: 3.5vmax;
+    padding: .3em .8em .2em;
+    text-decoration: none;
+    -webkit-transition: background-color,box-shadow 200ms ease-out;
+    -moz-transition: background-color,box-shadow 200ms ease-out;
+    -o-transition: background-color,box-shadow 200ms ease-out;
+    transition: background-color,box-shadow 200ms ease-out;
+    font-weight: 300;
+    margin-top: .7em;
+    margin-left: .5em;
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+    text-shadow: 0 0 30px rgba(0,0,0,.5);
+}
+@media screen and (min-width: 1200px) {
+  .intro-button {
+      font-size: 3.5vh
+  }
+}
+#intro h1 {
+    font-size: 20vh;
+    text-shadow: 0 0 4vh #000;
+    color: #fff;
+}
+#intro p {
+    font-size: 8.5vh;
+    text-shadow: 0 0 1.6vh #000;
+    color: #eee;
+}
+#intro h1, #intro p {
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    line-height: 1em;
+}
+@media screen and (orientation: portrait) {
+    #intro h1 {
+        font-size: 8vh;
+    }
+    #intro p {
+        font-size: 4vh;
+    }
+}
+.leaflet-control-container {
+    display : none
+}
+.leaflet-marker-icon {
+    border-radius: 100%
+}
+.leaflet-control a, .leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out {
+  font-size: 14px;
+}
+.leaflet-container div{
+	font: 14px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+/*L.Control.Locale.css*/
+.leaflet-control-locate a {
+  color: black;
+  cursor: pointer;
+}
+.leaflet-control-locate.active a {
+  color: #2074B6;
+}
+.leaflet-control-locate.active.following a {
+  color: #FC8428;
+}
+/*icomoon-styles.css*/
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?4wiglz');
+  src:  url('fonts/icomoon.eot?4wiglz#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?4wiglz') format('truetype'),
+    url('fonts/icomoon.woff?4wiglz') format('woff'),
+    url('fonts/icomoon.svg?4wiglz#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-spinner:before {
+  content: "\e902";
+}
+.icon-telegram:before {
+  content: "\e903";
+}
+.icon-facebook:before {
+  content: "\e904";
+}
+.icon-map-o:before {
+  content: "\e906";
+}
+.icon-map-signs:before {
+  content: "\e907";
+}
+.icon-location-arrow:before {
+  content: "\e908";
+}
+.icon-question:before {
+  content: "\ea09";
+}
+.icon-info:before {
+  content: "\ea0c";
+}
+.icon-cross:before {
+  content: "\ea0f";
+}
+.icon-arrow-right2:before {
+  content: "\ea3c";
+}
+.icon-arrow-left2:before {
+  content: "\ea40";
+}
+.icon-office:before {
+  content: "\e905";
+}
+.leaflet-top {
+    top: 70px;
+}
+.leaflet-control-select-menu {
+    font-size: 14px;
+}
+.marker-info {
+    color: rgba(255,255,255,0);
+    background-color: rgba(204,0,0,1);
+    border-radius: 16px;
+    box-shadow: 0 0 1px rgb(0 0 0);
+    text-align: center;
+    width: 8px;
+    height: 8px;
+    margin-left: 12px;
+    margin-top: 12px;
+    font-size: 6px;
+    line-height: 9px;
+    -webkit-appearance: none;
+}
+.marker-wrapper.hover .marker-info {
+    background-color: rgba(204,0,0,1);
+    color: rgba(255,255,255,1);
+    box-shadow: 0 0 8px rgba(0,0,0,1);
+    width: 20px;
+    height: 20px;
+    margin: 6px;
+    font-size: 14px;
+    line-height: 1.6
+}
+.icon-office {
+    border-radius: 4px;
+}
+.leaflet-modal .icon-cross{
+    float: right;
+    cursor:pointer
+}

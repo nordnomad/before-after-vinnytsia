@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="description" content="Порівняйте як змінилась вулична мережа та архітектура Харкова з 1942 р. і до сьогодні">
+    <meta name="keywords" content="Харьков, Харків, Kharkov, Kharkiv, WWII, ВОВ, архітектура, архитектура, architecture, вулиця, улица, сьогодні, сегодня, машина часу">
+    <meta name="author" content="@nord.nomad">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Харків з 1942 р. до сьогодні</title>
+
+    <meta property="og:title" content="Харків з 1942 р. до сьогодні" />
+    <meta property="og:description" content="Порівняйте як змінилась вулична мережа та архітектура Харкова з 1942 р. і до сьогодні" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://www.1942.kharkiv.ua/image/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Харків з 1942 р. до сьогодні" />
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="preload" as="image" href="http://localhost:4567/map/16/22224/39363.jpg" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" crossorigin="anonymous"/>
+<!--    <link rel="stylesheet" type="text/css" href="css/main.min.css"/>-->
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <link rel="stylesheet" href="css/leaflet.control.select.css"/>
+    <link rel="stylesheet" href="css/Leaflet.Modal.min.css"/>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3SB5J47D6S"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3SB5J47D6S');
+</script>
+<body>
+
+<div id="container" class="show-intro">
+    <div id="my-controls" class="leaflet-touch leaflet-bar"></div>
+    <div id="intro">
+        <h1>Вінниця</h1>
+        <p>у 1947 та сьогодні</p>
+        <div id="button-explore" class="intro-button btn">
+            <i class="icon-map-o"></i> Досліджувати
+        </div>
+<!--        <div id="button-start" class="intro-button btn">-->
+<!--            Екскурсія <i class="icon-map-signs"></i>-->
+<!--        </div>-->
+    </div>
+    <div id="map-base"></div>
+    <div class="content" id="content-1942">
+        <div class="content-wrapper">
+            <div class="content-header">
+                <h2 id="content-title-1942"></h2>
+                <div class="goto goto-explore" title="Исследовать">
+                    <i class="icon-cross"></i>
+                </div>
+            </div>
+            <div class="content-image">
+                <img id="content-img-1942" src="">
+            </div>
+            <div class="content-text">
+                <p id="content-description-1942"></p>
+            </div>
+            <div class="content-navigation">
+                <div id="goto-back" class="goto btn">
+                    <i class="icon-arrow-left2"></i> Назад
+                </div>
+                <div id="goto-2015" class="goto btn">
+                    2021
+                    <i class="icon-arrow-right2"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="map-clip" class="resize">
+        <div id="map-clip-inner">
+            <div id="map-overlay"></div>
+            <div class="content" id="content-2015">
+                <div class="content-wrapper">
+                    <div class="content-header">
+                        <h2 id="content-title-2015"></h2>
+                        <div class="goto goto-explore" title="Исследовать">
+                            <i class="icon-cross"></i>
+                        </div>
+                    </div>
+                    <div class="content-image">
+                        <img id="content-img-2015" src="">
+                    </div>
+                    <div class="content-text">
+                        <p id="content-description-2015"></p>
+                    </div>
+                    <div class="content-navigation">
+                        <div id="goto-1942" class="goto btn">
+                            <i class="icon-arrow-left2"></i>
+                            1942
+                        </div>
+                        <div id="goto-next" class="goto btn">
+                            Вперед
+                            <i class="icon-arrow-right2"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="control-slider">
+        <i class="icon-arrow-left2"></i>
+        <i class="icon-arrow-right2"></i>
+    </div>
+</div>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/leaflet.tilelayer.fallback@1.0.4/dist/leaflet.tilelayer.fallback.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/geo.js"></script>
+
+
+<script type="text/javascript" src="js/before-after.js"></script>
+<script type="text/javascript" src="js/L.Control.Locate.js"></script>
+<script type="text/javascript" src="js/leaflet.social.js"></script>
+<script type="text/javascript" src="js/control.bar.js"></script>
+<script type="text/javascript" src="js/init.js"></script>
+<script type="text/javascript" src="js/kh.js"></script>
+<script src="js/leaflet.control.select.js"></script>
+<script src="js/Leaflet.Modal.min.js"></script>
+</body>
+</html>
