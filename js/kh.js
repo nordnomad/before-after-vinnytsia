@@ -64,12 +64,12 @@
             }
             L.control.locate(locateOptions).addTo(map);
 
-            var options = {default_text: "Порівняйте як змінилась вулична мережа та архітектура Харкова з 1942 р. і до сьогодні", position: 'bottomright'};
+            var options = {default_text: "Порівняйте як змінилась вулична мережа Вінниці з 1947 р. і до сьогодні", position: 'bottomright'};
             L.control.bar(options).addTo(map);
             L.control.social(options).addTo(map);
 
             /*var items = [
-              { label: "Харків", value: "kharkiv" },
+              { label: "Вінниця", value: "kharkiv" },
               { label: "Київ", value: "kyiv" },
               { label: "Черкаси", value: "cherkasy" },
               { label: "Одеса", value: "odesa" },
@@ -257,13 +257,13 @@
                     CLOSE_CLS: 'icon-cross',
                     transitionDuration: 0,
                   content: `<h1>Про сайт</h1>
-                            Я створив даний проєкт виключно для власного задоволення та поєднання моєї любові до карт, програмування та Харкова. Проект мав бути завершений на початку 2022 року, але русня перекреслила ці плани. Тож, щоб дана робота не залишилася на кладовищі проектів, роблю її доступною як є.
+                            Я створив даний проєкт виключно для власного задоволення та поєднання моєї любові до карт, програмування та Вінниці.
                             <ul>
                             <style>
                               .modal a, .modal a:hover {display: inline;text-decoration: underline;line-height:normal}
                             </style>
                             <li>Стилі, користувацький досвід та натхнення отримав із сайту <a href="https://1928.tagesspiegel.de">Berlin 1928 und heute</a></li>
-                            <li>Фотографії та опис підготували <a href="https://www.instagram.com/nord.nomad/">@nord.nomad</a> та <a href="https://www.instagram.com/vitaly.ushakov/">@vitaly.ushakov</a></li>
+                            <li>Прив'язку старих знімків і сайт підготував <a href="https://www.instagram.com/nord.nomad/">@nord.nomad</a>, а обробку і відновлення знімків зробив <a href="https://www.instagram.com/vitaly.ushakov/">@vitaly.ushakov</a></li>
                             <li>Якщо ви побачили помилку в наповненні, функціональності сайту чи маєте інші пропозиції, будь ласка, напишіть указаним користувачам.</li>
                             <ul>`
                 });

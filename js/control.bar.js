@@ -7,23 +7,23 @@ L.Control.Bar = L.Control.extend({
     L.Util.setOptions(this, options);
   },
 
-  startTour: function () {
-    KH.prototype.markerClickListener(geoJson[0], false);
-  },
+  // startTour: function () {
+  //   KH.prototype.markerClickListener(geoJson[0], false);
+  // },
 
   onAdd: function(map) {
     this.map = map;
     this._container = L.DomUtil.create('div', 'leaflet-control leaflet-bar');
     var question = L.DomUtil.create('a', 'icon-question', this._container);
     question.href='#';
-    if(KH.prototype.selectedCity == "kharkiv") {
-        var tour = L.DomUtil.create('a', 'icon-map-signs', this._container);
-        tour.href='#';
-        L.DomEvent
-              .addListener(tour, 'click', L.DomEvent.stopPropagation)
-              .addListener(tour, 'click', L.DomEvent.preventDefault)
-              .addListener(tour, 'click', this.startTour);
-    }
+    // if(KH.prototype.selectedCity == "kharkiv") {
+    //     var tour = L.DomUtil.create('a', 'icon-map-signs', this._container);
+    //     tour.href='#';
+    //     L.DomEvent
+    //           .addListener(tour, 'click', L.DomEvent.stopPropagation)
+    //           .addListener(tour, 'click', L.DomEvent.preventDefault)
+    //           // .addListener(tour, 'click', this.startTour);
+    // }
     return this._container;
   }
 });

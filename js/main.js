@@ -79,10 +79,6 @@ function initContentPanel() {
         hideIntro();
         showMapControls();
     }, false);
-    document.querySelector('#button-start').addEventListener('click', function (event) {
-        hideIntro();
-        KH.prototype.markerClickListener(geoJson[0], false);
-    }, false);
 
     function hideIntro(){
         containerClasses.remove('show-intro');
