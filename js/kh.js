@@ -39,10 +39,10 @@
                 attributionControl: false,
                 inertia: true,
                 maxZoom: 17,
-                minZoom: 13,
-                zoom: 17,
-                tileSize: 256,
-                zoomControl:false,
+                minZoom: 14,
+                zoom: 15,
+                tileSize: 512,
+                zoomControl: false,
                 center: cityCenter,
                 maxBounds: cityBounds
             };

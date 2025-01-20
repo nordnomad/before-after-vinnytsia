@@ -1,39 +1,21 @@
 var after;
 var before;
 
-/*var options = {
-            containerSelector : '#container',
-            bounds: {
-                southWest: {
-                    lat: 49.901689,
-                    lng: 36.461400
-                },
-                northEast: {
-                    lat: 50.115857,
-                    lng: 36.019992
-                }
-            },
-            center: {
-                lat: 50.005720,
-                lng: 36.229192
-            },
-            markerClickCallback : markerClickHandler
-    	};*/
 var options = {
     containerSelector : '#container',
     bounds: {
         southWest: {
-            lat: 49.189683,
+            lat: 49.185000,
             lng: 28.360614
         },
         northEast: {
-            lat: 49.288404,
+            lat: 49.289704,
             lng: 28.595854
         }
     },
     center: {
-        lat: 49.231297,
-        lng: 28.482621
+        lat: 49.233476,
+        lng: 28.465933
     },
     markerClickCallback : markerClickHandler
 };
