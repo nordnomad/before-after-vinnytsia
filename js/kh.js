@@ -64,7 +64,7 @@
             }
             L.control.locate(locateOptions).addTo(map);
 
-            var options = {default_text: "Порівняйте як змінилась вулична мережа Вінниці з 1947 р. і до сьогодні", position: 'bottomright'};
+            var options = {default_text: "Порівняйте як змінилась вулична мережа Вінниці з 1949 р. і до сьогодні", position: 'bottomright'};
             L.control.bar(options).addTo(map);
             L.control.social(options).addTo(map);
 

@@ -94,7 +94,7 @@ p {
     border-radius: 7px;
 }
 #control-slider::before {
-    content: "1947";
+    content: "1949";
     text-align: right;
     padding-right: 40px;
     right: 0;
